@@ -1,0 +1,57 @@
+*{
+	border: none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	color: white;
+	font-size: 100%;
+	width: 100%;
+}
+
+body{
+	height: 100%
+	width: 100%;
+	background-color: #252525;
+}
+
+h1{
+	font-size: .95rem;
+	text-align: center;
+}
+
+.leadersContainer{
+	height: 100%;
+	width: 100%;
+}
+
+.leader{
+	cursor: pointer;
+	display: inline-block;
+	width: 24%;
+	padding: 15px 8px;
+}
+
+.card{
+	background-color: blue;
+	display: none;
+	margin: 0 auto;
+	top: 40%;
+	left: 40%;
+	position: fixed;
+	z-index: 100;
+}
+
+#shade{
+	background-color: black;
+	display: none;
+	height: 100%;
+	left: 0;
+	opacity: .7;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 50;
+}
