@@ -6,20 +6,30 @@
 }
 
 html{
-	color: white;
+	color: black;
+	font-family: 'Raleway', serif;
 	font-size: 100%;
 	width: 100%;
 }
 
 body{
-	background-color: #252525;
+	background-color: #F9F9F9;
 	height: 100%;
 	width: 100%;
 }
 
 h1{
 	font-size: .95rem;
+	margin: 5vh;
 	text-align: center;
+}
+
+section#title{
+	height: 70px;
+}
+
+section#title h1{
+	font-size: 2.5rem;
 }
 
 .leadersContainer{
@@ -30,18 +40,44 @@ h1{
 .leader{
 	cursor: pointer;
 	display: inline-block;
+	height: 15vh;
 	width: 24%;
 	padding: 15px 8px;
 }
 
 .card{
-	background-color: blue;
+	background-color: #F9F9F9;
 	display: none;
-	margin: 0 auto;
-	top: 40%;
-	left: 40%;
+	margin: 0 10vw;
 	position: fixed;
+	top: 30vh;
+	width: 80vw;
 	z-index: 100;
+}
+
+.sign{
+	font-size: 2rem;
+	margin: 40px;
+}
+
+.leaderName{
+	margin: 10px auto;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+.bio{
+	color: #4C4C4C;
+	font-weight: lighter;
+	padding: 20px 10%;
+	position: relative;
+}
+
+.card h4{
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
 }
 
 #shade{
@@ -49,9 +85,15 @@ h1{
 	display: none;
 	height: 100%;
 	left: 0;
-	opacity: .7;
+	opacity: .5;
 	position: absolute;
 	top: 0;
 	width: 100%;
 	z-index: 50;
+}
+
+#inputZone{
+	margin: 10vh auto 0 auto;
+	text-align: center;
+	width: 100%;
 }
