@@ -20,16 +20,68 @@ body{
 
 h1{
 	font-size: .95rem;
-	margin: 5vh;
+	margin: 0 0 0px 0;
 	text-align: center;
 }
 
+img{
+	display: block;
+}
+
 section#title{
-	height: 70px;
+	margin: 5vh 0 30px 0;
 }
 
 section#title h1{
-	font-size: 2.5rem;
+	font-size: 2.75rem;
+	letter-spacing: 3px;
+}
+
+section#title h2{
+	color: #B5B5B5;
+	font-size: .9rem;
+	font-weight: lighter;
+	margin: 20px auto 25px auto;
+	text-align: center;
+	width: 100%;
+}
+
+#inputZone{
+	margin: 0px auto 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+input{
+	border: 2px solid black;
+	font-size: 1.5rem;
+	padding: 10px;
+	position: relative;
+	text-align: center;
+	width: 15%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+#inputs{
+	width: 100%;
+}
+
+button{
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	margin: 10px 0;
+	padding: 10px;
+	width: 10%;
 }
 
 .leadersContainer{
@@ -38,10 +90,11 @@ section#title h1{
 }
 
 .leader{
+	border: solid 1px black;
 	cursor: pointer;
 	display: inline-block;
 	height: 15vh;
-	width: 24%;
+	width: 25%;
 	padding: 15px 8px;
 }
 
@@ -49,15 +102,17 @@ section#title h1{
 	background-color: #F9F9F9;
 	display: none;
 	margin: 0 10vw;
+	max-height: 90vh;
+	overflow-y: scroll;
 	position: fixed;
-	top: 30vh;
+	top: 7vh;
 	width: 80vw;
 	z-index: 100;
 }
 
 .sign{
 	font-size: 2rem;
-	margin: 40px;
+	margin: 20px;
 }
 
 .leaderName{
@@ -67,17 +122,46 @@ section#title h1{
 	width: 100%;
 }
 
+.birthday{
+	color: #4C4C4C;
+	font-size: .8rem;
+	font-weight: lighter;
+	margin: 0 auto;
+	padding: 5px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
 .bio{
 	color: #4C4C4C;
+	font-size: 1rem;
 	font-weight: lighter;
 	padding: 20px 10%;
 	position: relative;
 }
 
+.profileImage{
+	height: 100%;
+	margin: 0 auto;
+	max-height: 200px;
+	/*object-fit: cover;
+	object-position: top;
+	overflow: hidden;*/
+	position: relative;
+	text-align: center;
+	width: auto;
+}
+
 .card h4{
 	margin: 0 auto;
+	padding: 0 0 50px 0;
 	text-align: center;
 	width: 100%;
+}
+
+#noMatchCard .bio{
+	text-align: center;
 }
 
 #shade{
@@ -90,10 +174,4 @@ section#title h1{
 	top: 0;
 	width: 100%;
 	z-index: 50;
-}
-
-#inputZone{
-	margin: 10vh auto 0 auto;
-	text-align: center;
-	width: 100%;
 }

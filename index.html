@@ -10,9 +10,17 @@
 <body>
 	<section id="title">
 		<h1>ZODIAC LEADERS</h1>
+		<h2>See which world leader you share a zodiac sign with!</h2>
+		<div id="inputZone">
+			<div id="inputs">
+				<input id="month" type="number" name="month" placeholder="month">
+				<input id="day" type="number" name="day" placeholder="day">
+			</div>
+			<button id="submitButton">Submit</button>
+		</div>
 	</section>
-	<div id="leadersContainer">
-		<div class="leader" id="aries">
+	<section id="leadersContainer">
+	<!--	<div class="leader" id="aries">
 			<h1>Aries</h1>
 			<img src="">
 		</div>
@@ -59,104 +67,127 @@
 		<div class="leader" id="pisces">
 			<h1>Pisces</h1>
 			<img src="">
-		</div>
-	</div>
-	<div id="inputZone">
-		<input id="month" type="text" name="month" placeholder="month">
-		<input id="day" type="number" name="day" placeholder="day">
-		<button id="submitButton">Click me!</button>
-	</div>
+		</div>-->
+	</section>
+	
 	<div id="shade"></div>
 
-	<div id="ariesCard" class="card">
-		<h1 class="sign">Aries</h1>
-		<h2 class="leaderName">Charlemagne</h2>
-		<h3 class="bio">Born in 742, Charlemagne has been called the "Father of Europe" becuase of his unifying actions during the early Middle Ages. He was the first recognised emperor in western Europe since the fall of the Western Roman Empire three centuries earlier.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Charlemagne" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="taurusCard" class="card">
-		<h1 class="sign">Taurus</h1>
-		<h2 class="leaderName">Adolf Hitler</h2>
-		<h3 class="bio">Leader of the Nazi Party from 1933-1945, he is responsible for initiating World War II, and was central to the Holocaust. He is single-handedly responsible for over 70 million deaths. So, congratulations on sharing a zodiac sign with Adolf Hitler.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Adolf_Hitler" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="geminiCard" class="card">
-		<h1 class="sign">Gemini</h1>
-		<h2 class="leaderName">Queen Victoria</h2>
-		<h3 class="bio">During her rule, the United Kingdom went through a period of industrial, cultural, political, scientific, and military change, and was marked by a great expansion of the British Empire. Her reign is now known as the Victorian Era, spanning the years 1837-1901. This was the longest reign out of any of her predecessors.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Queen_Victoria" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="cancerCard" class="card">
-		<h1 class="sign">Cancer</h1>
-		<h2 class="leaderName">Julius Caesar</h2>
-		<h3 class="bio">Reigning as dictator from 49 BC - 44 BC, Caesar is known for his role in the fall of the Roman Republic and the rise of the Roman Empire. Through impressive military victories, he was able to extend Rome's territory to the English Channel and the Rhine. He would go on to lead his army back to Rome where he seized control of the government and began a program of social and government reforms. After 5 years of rule, he was assassinated by rebellious senators.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Julius_Caesar" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="leoCard" class="card">
-		<h1 class="sign">Leo</h1>
-		<h2 class="leaderName">Benito Mussolini</h2>
-		<h3 class="bio">In office from 1922-1943, Mussolini was an Italian politician and leader of the National Fascist Party. After establishing Italy as a dictatorship in 1925, he would go on to align himself with Adolf Hitler's Nazi Germnay in 1940, at the beginning of World War II. He was responsible for embarrassing military defeats across Europe and North Africa, eventually leading to Italy's surrender in 1943. By the end of the war in 1945, he was captured and executed by firing squad. </h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Benito_Mussolini" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="virgoCard" class="card">
-		<h1 class="sign">Virgo</h1>
-		<h2 class="leaderName">Caligula</h2>
-		<h3 class="bio">There are few surviving sources about the reign of Caligula, although he is described as a noble and moderate emperor during the first six months of his rule. After this, the sources focus upon his cruelty, sadism, extravagance, and sexual perversion, presenting him as an insane tyrant. In early AD 41, Caligula was assassinated as a result of a conspiracy by officers of the Praetorian Guard, senators, and courtiers.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Caligula" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="libraCard" class="card">
-		<h1 class="sign">Libra</h1>
-		<h2 class="leaderName">Mahatma Gandhi</h2>
-		<h3 class="bio">Gandhi was an Indian activist who was the leader of the Indian independence movement against British rule. Employing nonviolent civil disobedience, Gandhi led India to independence and inspired movements for civil rights and freedom across the world. On January 30, 1948, Gandhi was assassinated by a Hindu nationalist. Gandhi's birthday, 2 October, is commemorated as the International Day of Nonviolence.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Mahatma_Gandhi" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="scorpioCard" class="card">
-		<h1 class="sign">Scorpio</h1>
-		<h2 class="leaderName">Theodore Roosevelt</h2>
-		<h3 class="bio">As the United States' 26th President, Theodore Roosevelt is unofficially one of the most bad-ass leaders on this list. He was also a member of the Rough Riders, a cavalry unit known for fighting in Cuba. Making conservation a top priority, he established many new national parks, forests, and monuments intended to preserve the nation's natural resources. In foreign policy, he focused on Central America, where he began construction of the Panama Canal. He expanded the Navy and sent the Great White Fleet on a world tour to project the United States' naval power around the globe. His successful efforts to broker the end of the Russo-Japanese War won him the 1906 Nobel Peace Prize.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Theodore_Roosevelt" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="sagittariusCard" class="card">
-		<h1 class="sign">Sagittarius</h1>
-		<h2 class="leaderName">Joseph Stalin</h2>
-		<h3 class="bio">Leader of the Soviet Union from 1922-1952, Stalin was one of the world's most powerful figures at the time. Through his harsh ruling, he was able to defend the Soviet Union from Nazi advances and was able to force a conter-attack, eventually closing in on Berlin. He is known for consolidating power by murdering untrustworthy officials around him. Not including World War II, Stalin is single-handedly responsible for about 20 million deaths.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Joseph_Stalin" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="capricornCard" class="card">
-		<h1 class="sign">Capricorn</h1>
-		<h2 class="leaderName">Mao Zedong</h2>
-		<h3 class="bio">Commonly known as Chairman Mao, was a Chinese communist revolutionary, poet, political theorist and founding father of the People's Republic of China, which he ruled as the Chairman of the Communist Party of China from its establishment in 1949 until his death in 1976. His theories, military strategies, and political policies are collectively known as Maoism. Estimates of the amount of people that died under his regime range from 40-70 million due to famine, civil war, and cultural revolution.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Mao_Zedong" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="aquariusCard" class="card">
-		<h1 class="sign">Aquarius</h1>
-		<h2 class="leaderName">Abraham Lincoln</h2>
-		<h3 class="bio">"Honest Abe" was an American statesman and lawyer who served as the 16th President of the United States from March 1861 until his assassination in April 1865. Lincoln led the United States through its Civil War—its bloodiest war and perhaps its greatest moral, constitutional, and political crisis. In doing so, he preserved the Union, paved the way for the abolition of slavery, strengthened the federal government, and modernized the economy. Certified legend.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="piscesCard" class="card">
-		<h1 class="sign">Pisces</h1>
-		<h2 class="leaderName">George Washington</h2>
-		<h3 class="bio">Washington was an American statesman and soldier who served as the first President of the United States from 1789 to 1797 and was one of the Founding Fathers of the United States. He served as Commander-in-Chief of the Continental Army during the American Revolutionary War, and later presided over the 1787 convention that drafted the United States Constitution. He is popularly considered the driving force behind the nation's establishment and came to be known as the "father of the country," both during his lifetime and to this day.</h3>
-		<h4><a href="https://en.wikipedia.org/wiki/George_Washington" target="_blank">Read More</a></h4>
-		<img class="profileImage" src="">
-	</div>
-	<div id="noMatchCard" class="card">
-		<h1 class="sign">No Match!</h1>
-		<h3 class="bio">Try entering a valid date!</h3>
-		<img class="profileImage" src="">
-	</div>
+	<section id=cardContainer>
+		<div id="ariesCard" class="card">
+			<h1 class="sign">Aries</h1>
+			<img class="profileImage" src="img/charlemagne.jpeg">
+			<h2 class="leaderName">Charlemagne</h2>
+			<h2 class="birthday">Born April 2, 742 AD</h2>
+			<h3 class="bio">Born in 742, Charlemagne has been called the "Father of Europe" becuase of his unifying actions during the early Middle Ages. He was the first recognised emperor in western Europe since the fall of the Western Roman Empire three centuries earlier.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Charlemagne" target="_blank">Read More</a></h4>
+			<audio id="ariesSound" src="sounds/aries.mp3"></audio>
+		</div>
+		<div id="taurusCard" class="card">
+			<h1 class="sign">Taurus</h1>
+			<img class="profileImage" src="img/hitler.jpg">
+			<h2 class="leaderName">Adolf Hitler</h2>
+			<h2 class="birthday">Born April 20, 1889</h2>
+			<h3 class="bio">Leader of the Nazi Party from 1933-1945, he is responsible for initiating World War II, and was central to the Holocaust. He is single-handedly responsible for over 70 million deaths.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Adolf_Hitler" target="_blank">Read More</a></h4>
+			<audio id="taurusSound" src="sounds/taurus.mp3"></audio>
+		</div>
+		<div id="geminiCard" class="card">
+			<h1 class="sign">Gemini</h1>
+			<img class="profileImage" src="img/victoria.jpg">
+			<h2 class="leaderName">Queen Victoria</h2>
+			<h2 class="birthday">Born May 24, 1819</h2>
+			<h3 class="bio">During her rule, the United Kingdom went through a period of industrial, cultural, political, scientific, and military change, and was marked by a great expansion of the British Empire. Her reign is now known as the Victorian Era, spanning the years 1837-1901. This was the longest reign out of any of her predecessors.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Queen_Victoria" target="_blank">Read More</a></h4>
+			<audio id="geminiSound" src="sounds/gemini.mp3"></audio>
+		</div>
+		<div id="cancerCard" class="card">
+			<h1 class="sign">Cancer</h1>
+			<img class="profileImage" src="img/julius.jpg">
+			<h2 class="leaderName">Julius Caesar</h2>
+			<h2 class="birthday">Born July 13, 100 BC</h2>
+			<h3 class="bio">Reigning as dictator from 49 BC - 44 BC, Caesar is known for his role in the fall of the Roman Republic and the rise of the Roman Empire. Through impressive military victories, he was able to extend Rome's territory to the English Channel and the Rhine. He would go on to lead his army back to Rome where he seized control of the government and began a program of social and government reforms. After 5 years of rule, he was assassinated by rebellious senators.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Julius_Caesar" target="_blank">Read More</a></h4>
+			<audio id="cancerSound" src="sounds/cancer.mp3"></audio>
+		</div>
+		<div id="leoCard" class="card">
+			<h1 class="sign">Leo</h1>
+			<img class="profileImage" src="img/benito.jpg">
+			<h2 class="leaderName">Benito Mussolini</h2>
+			<h2 class="birthday">Born July 19, 1883</h2>
+			<h3 class="bio">In office from 1922-1943, Mussolini was an Italian politician and leader of the National Fascist Party. After establishing Italy as a dictatorship in 1925, he would go on to align himself with Adolf Hitler's Nazi Germany in 1940 at the beginning of World War II. He was responsible for embarrassing military defeats across Europe and North Africa, eventually leading to Italy's surrender in 1943. By the end of the war in 1945, he was captured and executed by firing squad. </h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Benito_Mussolini" target="_blank">Read More</a></h4>
+			<audio id="leoSound" src="sounds/leo.mp3"></audio>
+		</div>
+		<div id="virgoCard" class="card">
+			<h1 class="sign">Virgo</h1>
+			<img class="profileImage" src="img/caligula.jpg">
+			<h2 class="leaderName">Caligula</h2>
+			<h2 class="birthday">Born August 31, 12 AD</h2>
+			<h3 class="bio">There are few surviving sources about the reign of Caligula, although he is described as a noble and moderate emperor during the first six months of his rule. After this, the sources focus upon his cruelty, sadism, extravagance, and sexual perversion, presenting him as an insane tyrant. In early AD 41, Caligula was assassinated as a result of a conspiracy by officers of the Praetorian Guard, senators, and courtiers.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Caligula" target="_blank">Read More</a></h4>
+			<audio id="virgoSound" src="sounds/virgo.mp3"></audio>
+		</div>
+		<div id="libraCard" class="card">
+			<h1 class="sign">Libra</h1>
+			<img class="profileImage" src="img/gandhi.jpg">
+			<h2 class="leaderName">Mahatma Gandhi</h2>
+			<h2 class="birthday">Born October 2, 1869</h2>
+			<h3 class="bio">Gandhi was an Indian activist who was the leader of the Indian independence movement against British rule. Employing nonviolent civil disobedience, Gandhi led India to independence and inspired movements for civil rights and freedom across the world. On January 30, 1948, Gandhi was assassinated by a Hindu nationalist. Gandhi's birthday, 2 October, is commemorated as the International Day of Nonviolence.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Mahatma_Gandhi" target="_blank">Read More</a></h4>
+			<audio id="libraSound" src="sounds/libra.mp3"></audio>
+		</div>
+		<div id="scorpioCard" class="card">
+			<h1 class="sign">Scorpio</h1>
+			<img class="profileImage" src="img/teddy.jpg">
+			<h2 class="leaderName">Theodore Roosevelt</h2>
+			<h2 class="birthday">Born October 27, 1858</h2>
+			<h3 class="bio">As the United States' 26th President, Theodore Roosevelt is unofficially one of the most bad-ass leaders on this list. He was also a member of the Rough Riders, a cavalry unit known for fighting in Cuba. Making conservation a top priority, he established many new national parks, forests, and monuments intended to preserve the nation's natural resources. In foreign policy, he focused on Central America, where he began construction of the Panama Canal. He expanded the Navy and sent the Great White Fleet on a world tour to project the United States' naval power around the globe. His successful efforts to broker the end of the Russo-Japanese War won him the 1906 Nobel Peace Prize.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Theodore_Roosevelt" target="_blank">Read More</a></h4>
+			<audio id="scorpioSound" src="sounds/scorpio.mp3"></audio>
+		</div>
+		<div id="sagittariusCard" class="card">
+			<h1 class="sign">Sagittarius</h1>
+			<img class="profileImage" src="img/stalin.jpg">
+			<h2 class="leaderName">Joseph Stalin</h2>
+			<h2 class="birthday">Born December 18, 1878</h2>
+			<h3 class="bio">Leader of the Soviet Union from 1922-1952, Stalin was one of the world's most powerful figures at the time. Through his harsh ruling, he was able to defend the Soviet Union from Nazi advances and was able to force a counter-attack, eventually closing in on Berlin. He is known for consolidating power by murdering untrustworthy officials around him. Not including World War II, Stalin is single-handedly responsible for about 20 million deaths.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Joseph_Stalin" target="_blank">Read More</a></h4>
+			<audio id="sagittariusSound" src="sounds/sagittarius.mp3"></audio>
+		</div>
+		<div id="capricornCard" class="card">
+			<h1 class="sign">Capricorn</h1>
+			<img class="profileImage" src="img/mao.jpg">
+			<h2 class="leaderName">Mao Zedong</h2>
+			<h2 class="birthday">Born December 26, 1893</h2>
+			<h3 class="bio">Commonly known as Chairman Mao, he was a Chinese communist revolutionary, poet, political theorist and founding father of the People's Republic of China, which he ruled as the Chairman of the Communist Party of China from its establishment in 1949 until his death in 1976. His theories, military strategies, and political policies are collectively known as Maoism. Estimates of the amount of people that died under his regime range from 40-70 million due to famine, civil war, and cultural revolution.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Mao_Zedong" target="_blank">Read More</a></h4>
+			<audio id="capricornSound" src="sounds/capricorn.mp3"></audio>
+		</div>
+		<div id="aquariusCard" class="card">
+			<h1 class="sign">Aquarius</h1>
+			<img class="profileImage" src="img/abe.jpg">
+			<h2 class="leaderName">Abraham Lincoln</h2>
+			<h2 class="birthday">Born February 12, 1809</h2>
+			<h3 class="bio">"Honest Abe" was an American statesman and lawyer who served as the 16th President of the United States from March 1861 until his assassination in April 1865. Lincoln led the United States through its Civil War—its bloodiest war and perhaps its greatest moral, constitutional, and political crisis. In doing so, he preserved the Union, paved the way for the abolition of slavery, strengthened the federal government, and modernized the economy. Certified legend.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/Abraham_Lincoln" target="_blank">Read More</a></h4>
+			<audio id="aquariusSound" src="sounds/aquarius.mp3"></audio>
+		</div>
+		<div id="piscesCard" class="card">
+			<h1 class="sign">Pisces</h1>
+			<img class="profileImage" src="img/george.jpeg">
+			<h2 class="leaderName">George Washington</h2>
+			<h2 class="birthday">Born February 22, 1732</h2>
+			<h3 class="bio">Washington was an American statesman and soldier who served as the first President of the United States from 1789 to 1797 and was one of the Founding Fathers of the United States. He served as Commander-in-Chief of the Continental Army during the American Revolutionary War, and later presided over the 1787 convention that drafted the United States Constitution. He is popularly considered the driving force behind the nation's establishment and came to be known as the "father of the country," both during his lifetime and to this day.</h3>
+			<h4><a href="https://en.wikipedia.org/wiki/George_Washington" target="_blank">Read More</a></h4>
+			<audio id="piscesSound" src="sounds/pisces.mp3"></audio>
+		</div>
+		<div id="noMatchCard" class="card">
+			<h1 class="sign">No Match!</h1>
+			<img class="profileImage" src="img/wonka.jpg">
+			<h3 class="bio">Try entering a valid date!</h3>
+			<audio id="noMatchSound" src="sounds/noMatch.mp3"></audio>
+		</div>
+	</section>
 
 	<script type="text/javascript" src="index.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js""></script>
