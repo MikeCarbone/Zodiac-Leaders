@@ -1,10 +1,8 @@
 (function (){
-    var shade = document.getElementById('shade');
 
     
 
     //This will build the HTML blocks
-
     var zodiacSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
     var zodiacSignsLength = zodiacSigns.length;
 
@@ -22,11 +20,16 @@
          
         }
     }
+
     buildBlocks();
 
 
-    //Attaching a click event to each leader
 
+
+
+    var shade = document.getElementById('shade');
+
+    //Attaching a click event to each leader
     var leader = document.getElementsByClassName('leader');
     for (var i = 0; i < leader.length; i++){
         leader[i].addEventListener("click", function(){showLeaderCard(this.id)}, false);
@@ -45,9 +48,7 @@
 
     }
 
-
     //This will hide the card, make the shade go away and stop/reload audio
-
     shade.addEventListener("click", function(){hideLeaderCard()});
     function hideLeaderCard(){
         document.getElementById(openLeaderCard).style.display = "none";
@@ -57,9 +58,7 @@
         document.getElementById(openLeaderCard.slice(0, -4) + 'Sound').load();
     }
 
-
     //This will work the input section and figure out which card to show
-    
     document.getElementById('submitButton').addEventListener("click", function(){inputFactory()});
     var zodiacSign = ''
     function inputFactory(){
