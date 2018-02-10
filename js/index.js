@@ -1,7 +1,66 @@
 (function (){
     var shade = document.getElementById('shade');
-
+    var openLeaderCard = ''
     
+    var music = document.getElementById('backgroundMusic');
+    var backgroundRestingVolume = 30;
+    
+    //Changes layout from fixed to static after opening sequence
+
+    setTimeout(function(){
+        document.getElementsByClassName('center')[0].style.left = '0';
+        var titleStyle = document.getElementById('title').style;
+        titleStyle.position = 'static';
+        titleStyle.margin = '5vh 0 30px 0;';
+        titleStyle.left = '0';
+    }, 10000);
+
+
+    //Controls the timing and volume lowering of the intro sequence
+
+    music.play();
+    setTimeout(function(){musicController(music)}, 5000);
+    
+
+    function musicController(musicVar){
+        var i = 100;
+        setInterval(function(){
+            if (i > backgroundRestingVolume){
+                i--;
+                musicVar.volume = i / 100;
+                //console.log((i / 100));
+            }
+        }, 85);
+    }
+
+    //Fades music in
+
+     function fadeInMusic(musicVar){
+        var i = 0;
+        setInterval(function(){
+            if (i < backgroundRestingVolume){
+                i++;
+                musicVar.volume = i / 100;
+                //console.log('Fading in volume: ' + (i / 100));
+            }
+        }, 40);
+    }
+
+    //Fades music out
+
+     function fadeOutMusic(musicVar){
+        var i = backgroundRestingVolume;
+        setInterval(function(){
+            if (i > 0){
+                i--;
+                musicVar.volume = i / 100;
+                //console.log('Fading out volume: ' + (i / 100));
+            }
+        }, 10);
+    }
+    
+
+
 
     //This will build the HTML blocks
 
@@ -25,6 +84,8 @@
     buildBlocks();
 
 
+
+
     //Attaching a click event to each leader
 
     var leader = document.getElementsByClassName('leader');
@@ -32,11 +93,16 @@
         leader[i].addEventListener("click", function(){showLeaderCard(this.id)}, false);
     }
 
+
+
+
     //This will display the leaders card
-    var openLeaderCard = ''
+
     function showLeaderCard(zodiacId){
        var leaderCard = zodiacId + "Card";
        openLeaderCard = leaderCard;
+
+       fadeOutMusic(music);
 
        document.getElementById(leaderCard).style.display = "block";
        shade.style.display = "block";
@@ -44,6 +110,8 @@
        document.getElementById(zodiacId + 'Sound').play();
 
     }
+
+
 
 
     //This will hide the card, make the shade go away and stop/reload audio
@@ -55,7 +123,11 @@
 
         document.getElementById(openLeaderCard.slice(0, -4) + 'Sound').pause();
         document.getElementById(openLeaderCard.slice(0, -4) + 'Sound').load();
+
+        fadeInMusic(music);
     }
+
+
 
 
     //This will work the input section and figure out which card to show

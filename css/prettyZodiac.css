@@ -29,21 +29,52 @@ img{
 }
 
 section#title{
+	left: 50%;
 	margin: 5vh 0 30px 0;
+	position: fixed;
+	top: 0;
+	z-index: 15;
+	animation: titleMove 10s ease-in-out forwards 0s;
+}
+
+.center{
+	left: -50%;
+	position: relative;
 }
 
 section#title h1{
-	font-size: 2.75rem;
-	letter-spacing: 3px;
+	/*font-size: 2.75rem;
+	letter-spacing: 5px;*/
+	/*font-size: 2rem;
+	letter-spacing: -2px;*/
+	opacity: 0;
+	padding: 40px;
+	z-index: 15; 
+	animation: titleGrow 9s linear forwards 1s, 
+			   fadeIn 4s linear forwards 1s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+}
+
+hr{
+	background-color: #D8C700;
+	height: 2px;
+	margin: 0 auto;
+	width: 0%;
+	z-index: 15;
+	animation: hrGrow 4s ease-in-out forwards 2s;
 }
 
 section#title h2{
-	color: #B5B5B5;
-	font-size: .9rem;
+	color: black;
+	font-size: 1.5rem;
 	font-weight: lighter;
 	margin: 20px auto 25px auto;
+	opacity: 0;
+	padding: 40px;
 	text-align: center;
 	width: 100%;
+	animation: fadeIn 4s linear forwards 3s,
+			   paddingShrink 7s ease-in-out forwards 3s;
 }
 
 #inputZone{
@@ -55,6 +86,7 @@ section#title h2{
 input{
 	border: 2px solid black;
 	font-size: 1.5rem;
+	min-width: 100px;
 	padding: 10px;
 	position: relative;
 	text-align: center;
@@ -80,20 +112,37 @@ button{
 	color: white;
 	cursor: pointer;
 	margin: 10px 0;
+	min-width: 100px;
 	padding: 10px;
 	width: 10%;
 }
 
-.leadersContainer{
-	height: 100%;
-	width: 100%;
+button:hover{
+	background-color: white;
+	color: black;
+}
+
+#leadersContainer, h3, h4, button, input{
+	opacity: 0;
+	animation: fadeIn 2s linear forwards 10.5s;
+}
+
+section#cardContainer h2, h3{
+	opacity: 1;
+	animation: none;
+}
+
+#leadersContainer{
+	margin: 0;
 }
 
 .leader{
 	border: solid 1px black;
 	cursor: pointer;
 	display: inline-block;
+	/*display: none;*/
 	height: 15vh;
+	min-height: 100px;
 	width: 25%;
 	padding: 15px 8px;
 }
@@ -101,12 +150,12 @@ button{
 .card{
 	background-color: #F9F9F9;
 	display: none;
-	margin: 0 10vw;
+	margin: 0 20vw;
 	max-height: 90vh;
 	overflow-y: scroll;
 	position: fixed;
 	top: 7vh;
-	width: 80vw;
+	width: 60vw;
 	z-index: 100;
 }
 
@@ -139,21 +188,20 @@ button{
 	font-weight: lighter;
 	padding: 20px 10%;
 	position: relative;
+	animation: none;
 }
 
 .profileImage{
 	height: 100%;
 	margin: 0 auto;
 	max-height: 200px;
-	/*object-fit: cover;
-	object-position: top;
-	overflow: hidden;*/
 	position: relative;
 	text-align: center;
 	width: auto;
 }
 
 .card h4{
+	font-size: .85rem;
 	margin: 0 auto;
 	padding: 0 0 50px 0;
 	text-align: center;
@@ -174,4 +222,112 @@ button{
 	top: 0;
 	width: 100%;
 	z-index: 50;
+}
+
+#background{
+	display: inline-block;
+	left: 0;
+	object-fit: cover; 
+	object-position: center;
+	position: fixed;
+	background-repeat: repeat-y;
+	top: 0;
+	z-index: -10;
+
+	animation: 100s scroll infinite backwards linear;
+}
+
+#background2{
+	display: inline-block;
+	left: 0;
+	object-fit: cover; 
+	object-position: center;
+	position: fixed;
+	background-repeat: repeat-y;
+	top: 0;
+	z-index: -10;
+
+	animation: 100s scroll2 infinite backwards linear;
+}
+
+#entryBackground{
+	background-color: white;
+	height: 100%;
+	left: 0;
+	opacity: .8;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	animation: fadeOutBackground 2s linear forwards 6s;
+}
+
+@keyframes scroll{
+	0%{margin: 0 2016px;}
+	
+	100%{margin: 0 0px;}
+}
+
+@keyframes scroll2{
+	0%{margin: 0 0px}
+	
+	100%{margin: 0 -2016px}
+}
+
+@keyframes fadeOutBackground{
+	0%{
+		visibility: visible;
+		opacity: .8;
+	}
+	
+	100%{
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn{
+	from{opacity: 0;}
+
+	to{opacity: 1;}
+}
+
+@keyframes titleMove{
+	0%{top: 25vh;}
+
+	50%{top: 25vh;}
+
+	100%{
+		font-size: 2.75rem
+		letter-spacing: 5px;
+		top: 0;
+	}
+}
+
+@keyframes titleGrow{
+	0%{
+		font-size: 1rem;
+		letter-spacing: -2px;
+	}
+
+	50%{
+		font-size: 4.8rem;
+	}
+
+	100%{
+		font-size: 3.2rem;
+		letter-spacing: 8px;
+	}
+}
+
+@keyframes hrGrow{
+	from{width: 0%;}
+
+	to{width: 60%;}
+}
+
+@keyframes paddingShrink{
+	from{padding: 40px;}
+
+	to{padding: 5px;}
 }

@@ -9,14 +9,17 @@
 </head>
 <body>
 	<section id="title">
-		<h1>ZODIAC LEADERS</h1>
-		<h2>See which world leader you share a zodiac sign with!</h2>
-		<div id="inputZone">
-			<div id="inputs">
-				<input id="month" type="number" name="month" placeholder="month">
-				<input id="day" type="number" name="day" placeholder="day">
+		<div class="center">
+			<h1>ZODIAC LEADERS</h1>
+			<hr>
+			<h2>See which world leader you share a zodiac sign with!</h2>
+			<div id="inputZone">
+				<div id="inputs">
+					<input id="month" type="number" name="month" placeholder="month">
+					<input id="day" type="number" name="day" placeholder="day">
+				</div>
+				<button id="submitButton">Submit</button>
 			</div>
-			<button id="submitButton">Submit</button>
 		</div>
 	</section>
 	<section id="leadersContainer">
@@ -188,6 +191,10 @@
 			<audio id="noMatchSound" src="sounds/noMatch.mp3"></audio>
 		</div>
 	</section>
+	<img id="background" src="img/map.png">
+	<img id="background2" src="img/map.png">
+	<div id="entryBackground"></div>
+	<audio id="backgroundMusic" src="sounds/earth.mp3" loop></audio>
 
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js""></script>
