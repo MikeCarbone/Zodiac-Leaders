@@ -4,15 +4,20 @@
 	<title>Zodiac Project</title>
 	<link rel="stylesheet" type="text/css" href="css/prettyZodiac.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
 <body>
+	<!--<svg href="img/svg/shape-hitler.svg"></svg>-->
 	<section id="title">
 		<div class="center">
 			<h1>ZODIAC LEADERS</h1>
 			<hr>
 			<h2>See which world leader you share a zodiac sign with!</h2>
+			<!--<h3 class="leader" id="help">Help</h3>-->
+			<i id="help" class="leader fa fa-question-circle" aria-hidden="true"></i>
+			<h4>Enter your birthday:</h4>
 			<div id="inputZone">
 				<div id="inputs">
 					<input id="month" type="number" name="month" placeholder="month">
@@ -84,6 +89,7 @@
 			<h3 class="bio">Born in 742, Charlemagne has been called the "Father of Europe" becuase of his unifying actions during the early Middle Ages. He was the first recognised emperor in western Europe since the fall of the Western Roman Empire three centuries earlier.</h3>
 			<h4><a href="https://en.wikipedia.org/wiki/Charlemagne" target="_blank">Read More</a></h4>
 			<audio id="ariesSound" src="sounds/aries.mp3"></audio>
+			<!--<img class="paper" src="img/paper.jpg">-->
 		</div>
 		<div id="taurusCard" class="card">
 			<h1 class="sign">Taurus</h1>
@@ -190,11 +196,23 @@
 			<h3 class="bio">Try entering a valid date!</h3>
 			<audio id="noMatchSound" src="sounds/noMatch.mp3"></audio>
 		</div>
+		<div id="helpCard" class="card">
+			<h1 class="sign">Directions:</h1>
+			<!--<img class="profileImage" src="img/wonka.jpg">-->
+			<h3 class="bio">Enter your birthday into the boxes, then hit submit! A leader you share a zodiac sign with will appear. Click the grey around that box to close it. Feel free to click any pictures below to see which leader has that sign!</h3>
+			<audio id="helpSound" src="sounds/help.mp3"></audio>
+		</div>
 	</section>
 	<img id="background" src="img/map.png">
 	<img id="background2" src="img/map.png">
 	<div id="entryBackground"></div>
 	<audio id="backgroundMusic" src="sounds/earth.mp3" loop></audio>
+	<h1 id="x"">x</h1>
+	<!--<embed id="stalinIcon" type="image/svg+xml" src="img/svg/stalin.svg">Hello</embed>-->
+
+		<!--<svg viewBox="0 0 100 100" class="head">
+			<use xlink:href="#shape-hitler"></use>
+		</svg>-->
 
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js""></script>

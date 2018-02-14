@@ -1,9 +1,9 @@
 (function (){
     var shade = document.getElementById('shade');
-    var openLeaderCard = ''
+    var openLeaderCard = '';
+    var x = document.getElementById('x');
     
     var music = document.getElementById('backgroundMusic');
-    var backgroundRestingVolume = 30;
     
     //Changes layout from fixed to static after opening sequence
 
@@ -16,10 +16,10 @@
     }, 10000);
 
 
-    //Controls the timing and volume lowering of the intro sequence
+    //Controls the volume lowering of the music during the intro sequence
 
     music.play();
-    setTimeout(function(){musicController(music)}, 5000);
+    setTimeout(function(){musicController(music)}, 8000);
     
 
     function musicController(musicVar){
@@ -30,10 +30,11 @@
                 musicVar.volume = i / 100;
                 //console.log((i / 100));
             }
-        }, 85);
+        }, 40);
     }
 
     //Fades music in
+    var backgroundRestingVolume = 30;
 
      function fadeInMusic(musicVar){
         var i = 0;
@@ -41,9 +42,9 @@
             if (i < backgroundRestingVolume){
                 i++;
                 musicVar.volume = i / 100;
-                //console.log('Fading in volume: ' + (i / 100));
+                console.log('Fading in volume: ' + (i / 100));
             }
-        }, 40);
+        }, 10);
     }
 
     //Fades music out
@@ -51,10 +52,10 @@
      function fadeOutMusic(musicVar){
         var i = backgroundRestingVolume;
         setInterval(function(){
-            if (i > 0){
+            if (i > 0) {
                 i--;
                 musicVar.volume = i / 100;
-                //console.log('Fading out volume: ' + (i / 100));
+                console.log('Fading out volume: ' + (i / 100));
             }
         }, 10);
     }
@@ -62,10 +63,11 @@
 
 
 
-    //This will build the HTML blocks
+    //This will build the leader blocks
 
     var zodiacSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
     var zodiacSignsLength = zodiacSigns.length;
+    var leaderNames = ['charlemagne', 'hitler', 'victoria', 'caesar', 'benito', 'caligula', 'gandhi', 'teddy', 'stalin', 'mao', 'abe', 'george'];
 
     function buildBlocks(){
         var leadersContainer = document.getElementById('leadersContainer');
@@ -75,9 +77,16 @@
             leadersContainer.appendChild(newLeader);
             newLeader.classList.add('leader');
             newLeader.id = zodiacSigns[i];
-            var leaderHeader = document.createElement('h1');
-            newLeader.appendChild(leaderHeader);
-            leaderHeader.innerHTML = zodiacSigns[i].charAt(0).toUpperCase() + zodiacSigns[i].slice(1);
+            
+           // var leaderHeader = document.createElement('h1');
+            //newLeader.appendChild(leaderHeader);
+            //leaderHeader.innerHTML = zodiacSigns[i].charAt(0).toUpperCase() + zodiacSigns[i].slice(1);
+            
+            var leaderPic = document.createElement('img');
+            newLeader.appendChild(leaderPic);
+            leaderPic.classList.add('leaderPic');
+            leaderPic.src = "img/png/" + leaderNames[i] + ".png";
+
          
         }
     }
@@ -99,15 +108,19 @@
     //This will display the leaders card
 
     function showLeaderCard(zodiacId){
-       var leaderCard = zodiacId + "Card";
-       openLeaderCard = leaderCard;
+        var leaderCard = zodiacId + "Card";
+        openLeaderCard = leaderCard;
 
-       fadeOutMusic(music);
+        fadeOutMusic(music);
 
-       document.getElementById(leaderCard).style.display = "block";
-       shade.style.display = "block";
+        document.getElementById(leaderCard).style.display = "block";
+        shade.style.display = "block";
+        x.style.display = "block";
 
-       document.getElementById(zodiacId + 'Sound').play();
+        document.getElementById(zodiacId + 'Sound').play();
+
+      // document.getElementById(leaderCard).classList.add('cardFadeIn');
+      // setTimeout(function(){document.getElementById(leaderCard).classList.remove('cardFadeIn');}, 100);
 
     }
 
@@ -118,8 +131,12 @@
 
     shade.addEventListener("click", function(){hideLeaderCard()});
     function hideLeaderCard(){
+        //document.getElementById(openLeaderCard).classList.add('cardFadeOut');
+       // document.getElementById(openLeaderCard).classList.remove('cardFadeOut');
+
         document.getElementById(openLeaderCard).style.display = "none";
         shade.style.display = "none";
+        x.style.display = "none";
 
         document.getElementById(openLeaderCard.slice(0, -4) + 'Sound').pause();
         document.getElementById(openLeaderCard.slice(0, -4) + 'Sound').load();
