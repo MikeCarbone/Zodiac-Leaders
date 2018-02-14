@@ -70,7 +70,9 @@
     var leaderNames = ['charlemagne', 'hitler', 'victoria', 'caesar', 'benito', 'caligula', 'gandhi', 'teddy', 'stalin', 'mao', 'abe', 'george'];
 
     function buildBlocks(){
-        var leadersContainer = document.getElementById('leadersContainer');
+        var leadersContainer = document.createElement('section');
+        document.querySelector('body').appendChild(leadersContainer);
+        leadersContainer.id = "leadersContainer";
         
         for (i = 0; i < zodiacSignsLength; i++){
             var newLeader = document.createElement('div');
