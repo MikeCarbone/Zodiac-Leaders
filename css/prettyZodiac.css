@@ -113,6 +113,7 @@ input[type='number'] {
 }
 
 button{
+	border: 2px solid black;
 	background-color: black;
 	color: white;
 	cursor: pointer;
@@ -123,8 +124,7 @@ button{
 }
 
 button:hover{
-	background-color: #D8C700;
-	color: black;
+	border: 2px solid #D8C700;
 }
 
 section#title h3, h4, #help{
@@ -194,7 +194,7 @@ section#cardContainer h2, h3{
 	display: none;
 	margin: 0 25vw;
 	max-height: 90vh;
-	overflow-y: scroll;
+	overflow-y: auto;
 	position: fixed;
 	top: 7vh;
 	width: 50vw;
