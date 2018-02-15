@@ -1,3 +1,73 @@
+@keyframes scroll{
+	0%{margin: 0 2016px;}
+	
+	100%{margin: 0 0px;}
+}
+
+@keyframes scroll2{
+	0%{margin: 0 0px}
+	
+	100%{margin: 0 -2016px}
+}
+
+@keyframes fadeOutBackground{
+	0%{
+		visibility: visible;
+		opacity: .8;
+	}
+	
+	100%{
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn{
+	from{opacity: 0;}
+
+	to{opacity: 1;}
+}
+
+@keyframes titleMove{
+	0%{top: 25vh;}
+
+	50%{top: 25vh;}
+
+	100%{
+		font-size: 2.75rem
+		letter-spacing: 5px;
+		top: 0;
+	}
+}
+
+@keyframes titleGrow{
+	0%{
+		font-size: 1rem;
+		letter-spacing: -2px;
+	}
+
+	50%{
+		font-size: 4.8rem;
+	}
+
+	100%{
+		font-size: 3.2rem;
+		letter-spacing: 8px;
+	}
+}
+
+@keyframes hrGrow{
+	from{width: 0%;}
+
+	to{width: 60%;}
+}
+
+@keyframes paddingShrink{
+	from{padding: 40px;}
+
+	to{padding: 5px;}
+}
+
 *{
 	border: none;
 	box-sizing: border-box;
@@ -44,6 +114,9 @@ section#title{
 	top: 0;
 	z-index: 15;
 	animation: titleMove 10s ease-in-out forwards 0s;
+	-webkit-animation: titleMove 10s ease-in-out forwards 0s;
+	-moz-animation: titleMove 10s ease-in-out forwards 0s;
+	-o-animation: titleMove 10s ease-in-out forwards 0s;
 }
 
 .center{
@@ -58,6 +131,15 @@ section#title h1{
 	animation: titleGrow 9s linear forwards 1s, 
 			   fadeIn 4s linear forwards 1s,
 			   paddingShrink 7s ease-in-out forwards 3s;
+	-webkit-animation: titleGrow 9s linear forwards 1s, 
+			   fadeIn 4s linear forwards 1s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-moz-animation: titleGrow 9s linear forwards 1s, 
+			   fadeIn 4s linear forwards 1s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-o-animation: titleGrow 9s linear forwards 1s, 
+			   fadeIn 4s linear forwards 1s,
+			   paddingShrink 7s ease-in-out forwards 3s;
 }
 
 hr{
@@ -67,6 +149,9 @@ hr{
 	width: 0%;
 	z-index: 15;
 	animation: hrGrow 4s ease-in-out forwards 2s;
+	-webkit-animation: hrGrow 4s ease-in-out forwards 2s;
+	-moz-animation: hrGrow 4s ease-in-out forwards 2s;
+	-o-animation: hrGrow 4s ease-in-out forwards 2s;
 }
 
 section#title h2{
@@ -79,6 +164,12 @@ section#title h2{
 	text-align: center;
 	width: 100%;
 	animation: fadeIn 4s linear forwards 3s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-webkit-animation: fadeIn 4s linear forwards 3s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-moz-animation: fadeIn 4s linear forwards 3s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-o-animation: fadeIn 4s linear forwards 3s,
 			   paddingShrink 7s ease-in-out forwards 3s;
 }
 
@@ -141,7 +232,7 @@ section#title h4{
 
 #help{
 	border: none;
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	float: left;
 	left: 0;
 	margin: -15px 0 0 10px;
@@ -154,11 +245,17 @@ section#title h4{
 #leadersContainer, h3, button, input{
 	opacity: 0;
 	animation: fadeIn 2s linear forwards 10.5s;
+	-webkit-animation: fadeIn 2s linear forwards 10.5s;
+	-moz-animation: fadeIn 2s linear forwards 10.5s;
+	-o-animation: fadeIn 2s linear forwards 10.5s;
 }
 
 section#cardContainer h2, h3{
 	opacity: 1;
 	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
 }
 
 #leadersContainer{
@@ -231,6 +328,9 @@ section#cardContainer h2, h3{
 	padding: 20px 10%;
 	position: relative;
 	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
 }
 
 .profileImage{
@@ -251,11 +351,17 @@ section#cardContainer h2, h3{
 	text-align: center;
 	width: 100%;
 	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
 }
 
 .card a{
-	animation: none;
 	opacity: 1;
+	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
 }
 
 .paper{
@@ -276,39 +382,46 @@ section#cardContainer h2, h3{
 	background-color: black;
 	cursor: pointer;
 	display: none;
-	height: 100%;
+	height: 100vh;
 	left: 0;
 	opacity: .5;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 50;
 }
 
-#background{
-	display: inline-block;
-	left: 0;
-	object-fit: cover; 
-	object-position: center;
-	position: fixed;
+.bg{
+	background-image: url(../img/map.png);
 	background-repeat: repeat-y;
+	background-size: cover;
+	background-position: center;
+	border: none;
+	display: inline-block;
+	height: 100vh;
+	left: 0;
+	min-width: 2016px;
+	margin: 0 -2016px 0 0;
+	max-width: 2016px;
+	padding: 0;
+	position: fixed;
 	top: 0;
+	width: 100vw;
 	z-index: -10;
 
+}
+.bg#bg1{
 	animation: 100s scroll infinite backwards linear;
+	-webkit-animation: 100s scroll infinite backwards linear;
+	-moz-animation: 100s scroll infinite backwards linear;
+	-o-animation: 100s scroll infinite backwards linear;
 }
 
-#background2{
-	display: inline-block;
-	left: 0;
-	object-fit: cover; 
-	object-position: center;
-	position: fixed;
-	background-repeat: repeat-y;
-	top: 0;
-	z-index: -10;
-
+.bg#bg2{
 	animation: 100s scroll2 infinite backwards linear;
+	-webkit-animation: 100s scroll2 infinite backwards linear;
+	-moz-animation: 100s scroll2 infinite backwards linear;
+	-o-animation: 100s scroll2 infinite backwards linear;
 }
 
 #entryBackground{
@@ -321,20 +434,28 @@ section#cardContainer h2, h3{
 	width: 100%;
 	z-index: 10;
 	animation: fadeOutBackground 2s linear forwards 6s;
+	-webkit-animation: fadeOutBackground 2s linear forwards 6s;
+	-moz-animation: fadeOutBackground 2s linear forwards 6s;
+	-o-animation: fadeOutBackground 2s linear forwards 6s;
 }
 
 .cardFadeIn{
 	animation: fadeIn .5s linear forwards;
+	-webkit-animation: fadeIn .5s linear forwards;
+	-moz-animation: fadeIn .5s linear forwards;
+	-o-animation: fadeIn .5s linear forwards;
 }
 
 .cardFadeOut{
 	animation: fadeOut .5s linear forwards;
+	-webkit-animation: fadeOut .5s linear forwards;
+	-moz-animation: fadeOut .5s linear forwards;
+	-o-animation: fadeOut .5s linear forwards;
 }
 
 .head:hover{
 	stroke: white;
 	stroke-width: 2px;
-
 }
 
 #x{
@@ -349,76 +470,6 @@ section#cardContainer h2, h3{
 	z-index: 51;
 }
 
-@keyframes scroll{
-	0%{margin: 0 2016px;}
-	
-	100%{margin: 0 0px;}
-}
-
-@keyframes scroll2{
-	0%{margin: 0 0px}
-	
-	100%{margin: 0 -2016px}
-}
-
-@keyframes fadeOutBackground{
-	0%{
-		visibility: visible;
-		opacity: .8;
-	}
-	
-	100%{
-		visibility: hidden;
-		opacity: 0;
-	}
-}
-
-@keyframes fadeIn{
-	from{opacity: 0;}
-
-	to{opacity: 1;}
-}
-
-@keyframes titleMove{
-	0%{top: 25vh;}
-
-	50%{top: 25vh;}
-
-	100%{
-		font-size: 2.75rem
-		letter-spacing: 5px;
-		top: 0;
-	}
-}
-
-@keyframes titleGrow{
-	0%{
-		font-size: 1rem;
-		letter-spacing: -2px;
-	}
-
-	50%{
-		font-size: 4.8rem;
-	}
-
-	100%{
-		font-size: 3.2rem;
-		letter-spacing: 8px;
-	}
-}
-
-@keyframes hrGrow{
-	from{width: 0%;}
-
-	to{width: 60%;}
-}
-
-@keyframes paddingShrink{
-	from{padding: 40px;}
-
-	to{padding: 5px;}
-}
-
 @media screen and (max-width: 600px){
 	.leader{
 		width: 33%;
@@ -427,5 +478,9 @@ section#cardContainer h2, h3{
 	.card{
 		margin: 0 10vw;
 		width: 80vw
+	}
+
+	#help{
+		font-size: 3rem;
 	}
 }

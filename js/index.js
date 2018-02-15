@@ -88,6 +88,7 @@
             newLeader.appendChild(leaderPic);
             leaderPic.classList.add('leaderPic');
             leaderPic.src = "img/png/" + leaderNames[i] + ".png";
+            leaderPic.alt = "Picture of " + leaderNames[i];
 
          
         }
@@ -267,6 +268,9 @@
         month = '';
         day = '';
     }
+
+
+    //If the user clicks enter, it will trigger the submit button
 
     document.addEventListener("keypress", function(event){
         if (event.keyCode == 13) {
