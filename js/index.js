@@ -2,11 +2,9 @@
     var shade = document.getElementById('shade');
     var openLeaderCard = '';
     var x = document.getElementById('x');
-    
     var music = document.getElementById('backgroundMusic');
     
     //Changes layout from fixed to static after opening sequence
-
     setTimeout(function(){
         document.getElementsByClassName('center')[0].style.left = '0';
         var titleStyle = document.getElementById('title').style;
@@ -15,13 +13,10 @@
         titleStyle.left = '0';
     }, 10000);
 
-
     //Controls the volume lowering of the music during the intro sequence
-
     music.play();
     setTimeout(function(){musicController(music)}, 8000);
     
-
     function musicController(musicVar){
         var i = 100;
         setInterval(function(){
@@ -35,36 +30,30 @@
 
     //Fades music in
     var backgroundRestingVolume = 30;
-
-     function fadeInMusic(musicVar){
+    function fadeInMusic(musicVar){
         var i = 0;
         setInterval(function(){
             if (i < backgroundRestingVolume){
                 i++;
                 musicVar.volume = i / 100;
-                console.log('Fading in volume: ' + (i / 100));
+                //console.log('Fading in volume: ' + (i / 100));
             }
         }, 10);
     }
 
     //Fades music out
-
-     function fadeOutMusic(musicVar){
+    function fadeOutMusic(musicVar){
         var i = backgroundRestingVolume;
         setInterval(function(){
             if (i > 0) {
                 i--;
                 musicVar.volume = i / 100;
-                console.log('Fading out volume: ' + (i / 100));
+                //console.log('Fading out volume: ' + (i / 100));
             }
         }, 10);
     }
-    
-
-
 
     //This will build the leader blocks
-
     var zodiacSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
     var zodiacSignsLength = zodiacSigns.length;
     var leaderNames = ['charlemagne', 'hitler', 'victoria', 'caesar', 'benito', 'caligula', 'gandhi', 'teddy', 'stalin', 'mao', 'abe', 'george'];
@@ -80,36 +69,22 @@
             newLeader.classList.add('leader');
             newLeader.id = zodiacSigns[i];
             
-           // var leaderHeader = document.createElement('h1');
-            //newLeader.appendChild(leaderHeader);
-            //leaderHeader.innerHTML = zodiacSigns[i].charAt(0).toUpperCase() + zodiacSigns[i].slice(1);
-            
             var leaderPic = document.createElement('img');
             newLeader.appendChild(leaderPic);
             leaderPic.classList.add('leaderPic');
             leaderPic.src = "img/png/" + leaderNames[i] + ".png";
             leaderPic.alt = "Picture of " + leaderNames[i];
-
-         
         }
     }
     buildBlocks();
 
-
-
-
     //Attaching a click event to each leader
-
     var leader = document.getElementsByClassName('leader');
     for (var i = 0; i < leader.length; i++){
         leader[i].addEventListener("click", function(){showLeaderCard(this.id)}, false);
     }
 
-
-
-
     //This will display the leaders card
-
     function showLeaderCard(zodiacId){
         var leaderCard = zodiacId + "Card";
         openLeaderCard = leaderCard;
@@ -121,17 +96,9 @@
         x.style.display = "block";
 
         document.getElementById(zodiacId + 'Sound').play();
-
-      // document.getElementById(leaderCard).classList.add('cardFadeIn');
-      // setTimeout(function(){document.getElementById(leaderCard).classList.remove('cardFadeIn');}, 100);
-
     }
 
-
-
-
     //This will hide the card, make the shade go away and stop/reload audio
-
     shade.addEventListener("click", function(){hideLeaderCard()});
     function hideLeaderCard(){
         //document.getElementById(openLeaderCard).classList.add('cardFadeOut');
@@ -146,12 +113,8 @@
 
         fadeInMusic(music);
     }
-
-
-
-
-    //This will work the input section and figure out which card to show
     
+    //This will work the input section and figure out which card to show
     document.getElementById('submitButton').addEventListener("click", function(){inputFactory()});
     var zodiacSign = ''
     function inputFactory(){
@@ -263,19 +226,15 @@
         else{
             zodiacSign = 'noMatch';
         }
-
         showLeaderCard(zodiacSign);
         month = '';
         day = '';
     }
 
-
     //If the user clicks enter, it will trigger the submit button
-
     document.addEventListener("keypress", function(event){
         if (event.keyCode == 13) {
             inputFactory();
         }
     });
-
 })();
