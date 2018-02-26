@@ -26,6 +26,7 @@
                 //console.log((i / 100));
             }
         }, 40);
+        return musicVar.volume;
     }
 
     //Fades music in
@@ -39,6 +40,7 @@
                 //console.log('Fading in volume: ' + (i / 100));
             }
         }, 10);
+        return musicVar.volume;
     }
 
     //Fades music out
@@ -51,6 +53,7 @@
                 //console.log('Fading out volume: ' + (i / 100));
             }
         }, 10);
+        return musicVar.volume;
     }
 
     //This will build the leader blocks
@@ -75,6 +78,7 @@
             leaderPic.src = "img/png/" + leaderNames[i] + ".png";
             leaderPic.alt = "Picture of " + leaderNames[i];
         }
+        return;
     }
     buildBlocks();
 
@@ -96,14 +100,13 @@
         x.style.display = "block";
 
         document.getElementById(zodiacId + 'Sound').play();
+
+        return;
     }
 
     //This will hide the card, make the shade go away and stop/reload audio
     shade.addEventListener("click", function(){hideLeaderCard()});
     function hideLeaderCard(){
-        //document.getElementById(openLeaderCard).classList.add('cardFadeOut');
-       // document.getElementById(openLeaderCard).classList.remove('cardFadeOut');
-
         document.getElementById(openLeaderCard).style.display = "none";
         shade.style.display = "none";
         x.style.display = "none";
@@ -112,8 +115,10 @@
         document.getElementById(openLeaderCard.slice(0, -4) + 'Sound').load();
 
         fadeInMusic(music);
+
+        return;
     }
-    
+
     //This will work the input section and figure out which card to show
     document.getElementById('submitButton').addEventListener("click", function(){inputFactory()});
     var zodiacSign = ''
@@ -229,6 +234,8 @@
         showLeaderCard(zodiacSign);
         month = '';
         day = '';
+
+        return zodiacSign;
     }
 
     //If the user clicks enter, it will trigger the submit button
