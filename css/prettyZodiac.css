@@ -236,8 +236,8 @@ section#title h4{
 	font-size: 1.75rem;
 	float: left;
 	left: 0;
-	margin: -15px 0 0 10px;
-	position: absolute;
+	margin: 10px;
+	position: fixed;
 	top: 0;
 	width: auto;
 	z-index: 10;
@@ -479,11 +479,19 @@ section#cardContainer h2, h3{
 }
 
 .volume{
+	border: none;
+	font-size: 2rem !important;
 	float: right;
-	font-size: 1.75rem;
-	position: absolute;
-	right: 0;
+	right: 10px;
+	margin: 10px;
+	position: fixed;
 	top: 0;
+	width: auto;
+	z-index: 10;
+}
+
+#volUp{
+	display: none;
 }
 
 @media screen and (max-width: 700px){
@@ -497,6 +505,10 @@ section#cardContainer h2, h3{
 	}
 
 	#help{
-		font-size: 3rem;
+		font-size: 2.25rem;
+	}
+
+	.volume{
+		font-size: 2.25rem !important;
 	}
 }

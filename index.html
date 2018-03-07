@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/prettyZodiac.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="icon" href="img/png/earth.png">
 </head>
 <body>
@@ -15,16 +15,17 @@
 			<h1>ZODIAC LEADERS</h1>
 			<hr>
 			<h2>See which world leader you share a zodiac sign with!</h2>
+
 			<i id="help" class="leader fa fa-question-circle" aria-hidden="true"></i>
-			<!--<i class="fas fa-volume-off" aria-hidden="true" id="volDown"></i>
-			<i class="fas fa-volume-up" aria-hidden="true" id="volUp"></i>-->
+			<i class="volume fa fa-volume-off" aria-hidden="true" id="volDown"></i>
+			<i class="volume fa fa-volume-up" aria-hidden="true" id="volUp"></i>
 
 
 			<h4>Enter your birthday:</h4>
 			<div id="inputZone">
 				<div id="inputs">
-					<input id="month" type="number" name="month" placeholder="month">
-					<input id="day" type="number" name="day" placeholder="day">
+					<input id="month" type="number" name="month" placeholder="month" required>
+					<input id="day" type="number" name="day" placeholder="day" required>
 				</div>
 				<button id="submitButton">Submit</button>
 			</div>
@@ -161,6 +162,6 @@
 		<div id="shade"></div>
 	</section>
 
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/index2.js"></script>
 </body>
 </html>
