@@ -1,65 +1,62 @@
 {    
-    const   shade = document.getElementById('shade');
+    const   SHADE = document.getElementById('shade');
+            X = document.getElementById('x');
+            BACK_MUSIC = document.getElementById('backgroundMusic');
+            
+    var     isMuted = true;
             openLeaderCard = '';
-            x = document.getElementById('x');
-            music = document.getElementById('backgroundMusic');
-            isMuted = true;
-    
-    //Changes layout from fixed to static after opening sequence
+   
+    //Changes layout of title section from fixed to static after opening sequence so the rest of the interface is laid out correctly
     setTimeout(function(){
         document.getElementsByClassName('center')[0].style.left = '0';
-        const titleStyle = document.getElementById('title').style;
+        var titleStyle = document.getElementById('title').style;
         titleStyle.position = 'static';
         titleStyle.margin = '5vh 0 30px 0;';
         titleStyle.left = '0';
     }, 10000);
 
-    //Controls the volume lowering of the music during the intro sequence
-    setTimeout(function(){musicController(music)}, 8000);
-    //music.load();
+    //Controls the volume lowering of the music during the intro sequence. Music starts at a higher volume, then will sit at a lower volume.
+    setTimeout(function(){musicController(BACK_MUSIC)}, 8000);
+    BACK_MUSIC.load();
     function musicController(musicVar){
-        if (music.paused) return;
+        if (BACK_MUSIC.paused) return;
         var i = 100;
         setInterval(function(){
             if (i > backgroundRestingVolume){
                 i--;
                 musicVar.volume = i / 100;
-                //console.log((i / 100));
             }
         }, 40);
         return musicVar.volume;
     }
 
-    //Fades music in
+    //Fades background music in again after a card is closed
     var backgroundRestingVolume = 30;
     function fadeInMusic(musicVar){
-        if (music.paused) return;
         var i = 0;
         setInterval(function(){
             if (i < backgroundRestingVolume){
                 i++;
                 musicVar.volume = i / 100;
-                //console.log('Fading in volume: ' + (i / 100));
             }
         }, 10);
         return musicVar.volume;
     }
 
-    //Fades music out
+    //Fades background music out when a card is opened, so the card's audio doesn't overlap with the background sound
     function fadeOutMusic(musicVar){
         var i = backgroundRestingVolume;
         setInterval(function(){
             if (i > 0) {
                 i--;
                 musicVar.volume = i / 100;
-                //console.log('Fading out volume: ' + (i / 100));
             }
         }, 10);
         return musicVar.volume;
     }
 
-    //This will build the leader blocks
-    const   zodiacSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
+    //This will build the interface of the leader's heads
+    var   zodiacSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
             zodiacSignsLength = zodiacSigns.length;
             leaderNames = ['charlemagne', 'hitler', 'victoria', 'caesar', 'benito', 'caligula', 'gandhi', 'teddy', 'stalin', 'mao', 'abe', 'george'];
 
@@ -84,7 +81,7 @@
     }
     buildBlocks();
 
-    //Attaching a click event to each leader
+    //Attaching a click event to each leader so you can view each leader's card
     var leader = document.getElementsByClassName('leader');
     for (var i = 0; i < leader.length; i++){
         leader[i].addEventListener("click", function(){showLeaderCard(this.id)}, false);
@@ -96,31 +93,29 @@
         openLeaderCard = leaderCard;
 
         if (isMuted == false){
-            fadeOutMusic(music);
+            fadeOutMusic(BACK_MUSIC);
             document.getElementById(zodiacId + 'Sound').play();
         }
 
         document.getElementById(leaderCard).style.display = "block";
-        shade.style.display = "block";
-        x.style.display = "block";
+        SHADE.style.display = "block";
+        X.style.display = "block";
 
         return;
     }
 
     //This will hide the card, make the shade go away and stop/reload audio
-    shade.addEventListener("click", function(){hideLeaderCard()});
+    SHADE.addEventListener("click", function(){hideLeaderCard()});
     function hideLeaderCard(){
         document.getElementById(openLeaderCard).style.display = "none";
-        shade.style.display = "none";
-        x.style.display = "none";
+        SHADE.style.display = "none";
+        X.style.display = "none";
 
         if (isMuted == false){
             document.getElementById(openLeaderCard.slice(0, -4) + 'Sound').pause();
             document.getElementById(openLeaderCard.slice(0, -4) + 'Sound').load();
-            fadeInMusic(music);
+            fadeInMusic(BACK_MUSIC);
         }
-        
-
         return;
     }
 
@@ -136,101 +131,41 @@
                 default:
                     zodiacSign = 'noMatch';
                 case 1:
-                    if (day < 18){
-                        zodiacSign = 'capricorn';
-                    } else if (day > 31){
-                        zodiacSign = 'noMatch';
-                    } else {
-                        zodiacSign = 'aquarius';
-                    } break;
+                    zodiacSign = (day < 18) ? 'capricorn' : (day > 31) ? 'noMatch' : 'aquarius';
+                    break;
                 case 2:
-                    if (day < 21){
-                        zodiacSign = 'aquarius';
-                    } else if (day > 29){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'pisces';
-                    } break;
+                    zodiacSign = (day < 21) ? 'aquarius' : (day > 29) ? 'noMatch' : 'pisces';
+                    break;
                 case 3:
-                    if (day < 21){
-                        zodiacSign = 'pisces';
-                    } else if (day > 31){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'aries';
-                    } break;
+                    zodiacSign = (day < 21) ? 'pisces' : (day > 31) ? 'noMatch' : 'aries';
+                    break;
                 case 4:
-                    if (day < 20){
-                        zodiacSign = 'aries';
-                    } else if (day > 30){
-                        zodiacSign = 'noMatch';
-                    }  else{
-                        zodiacSign = 'taurus';
-                    } break;
+                    zodiacSign = (day < 20) ? 'aries' : (day > 30) ? 'noMatch' : 'taurus';
+                    break;
                 case 5:
-                    if (day < 21){
-                        zodiacSign = 'taurus';
-                    } else if (day > 31){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'gemini';
-                    } break;
+                    zodiacSign = (day < 21) ? 'taurus' : (day > 31) ? 'noMatch' : 'gemini';
+                    break;
                 case 6:
-                    if (day < 22){
-                        zodiacSign = 'gemini';
-                    } else if (day > 30){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'cancer';
-                    } break;
+                    zodiacSign = (day < 22) ? 'gemini' : (day > 30) ? 'noMatch' : 'cancer';
+                    break;
                 case 7:
-                    if (day < 24){
-                        zodiacSign = 'cancer';
-                    } else if (day > 31){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'leo';
-                    } break;
+                    zodiacSign = (day < 24) ? 'cancer' : (day > 31) ? 'noMatch' : 'leo';
+                    break;
                 case 8:
-                    if (day < 24){
-                        zodiacSign = 'leo';
-                    } else if (day > 31){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'virgo';
-                    } break;
+                    zodiacSign = (day < 24) ? 'leo' : (day > 31) ? 'noMatch' : 'virgo';
+                    break;
                 case 9:
-                    if (day < 24){
-                        zodiacSign = 'virgo';
-                    } else if (day > 30){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'libra';
-                    } break;
+                    zodiacSign = (day < 24) ? 'virgo' : (day > 30) ? 'noMatch' : 'libra';
+                    break;
                 case 10:
-                    if (day < 24){
-                        zodiacSign = 'libra';
-                    } else if (day > 31){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'scorpio';
-                    } break;
+                    zodiacSign = (day < 24) ? 'libra' : (day > 31) ? 'noMatch' : 'scorpio';
+                    break;
                 case 11:
-                    if (day < 21){
-                        zodiacSign = 'scorpio';
-                    } else if (day > 30){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'sagittarius';
-                    } break;
+                    zodiacSign = (day < 21) ? 'scorpio' : (day > 30) ? 'noMatch' : 'sagittarius';
+                    break;
                 case 12:
-                    if (day < 22){
-                        zodiacSign = 'sagittarius';
-                    } else if (day > 31){
-                        zodiacSign = 'noMatch';
-                    } else{
-                        zodiacSign = 'capricorn';
-                    } break;
+                    zodiacSign = (day < 22) ? 'sagittarius' : (day > 31) ? 'noMatch' : 'capricorn';
+                    break;
             }
         }
         else{
@@ -250,16 +185,14 @@
         }
     });
 
-
-    //Adding the controls to the sound icons
+    //Adding the controls to the sound icons. This allows the user to mute/unmute all audio on the page if they want
     var volUp = document.getElementById('volUp');
         volDown = document.getElementById('volDown');
 
-        volUp.addEventListener("click", function(){soundControls(music);}, false);
-        volDown.addEventListener("click", function(){soundControls(music);}, false);
+        volUp.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
+        volDown.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
     
-    function soundControls(sound){
-        console.log('in sound controls');
+    function volumeButtonControls(sound){
         if (sound.paused) {
             sound.play();
             volUp.style.display = 'block';
