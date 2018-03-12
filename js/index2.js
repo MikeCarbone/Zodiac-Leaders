@@ -189,8 +189,8 @@
     var volUp = document.getElementById('volUp');
     var volDown = document.getElementById('volDown');
 
-        volUp.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
-        volDown.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
+    volUp.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
+    volDown.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
     
     function volumeButtonControls(sound){
         if (sound.paused) {
