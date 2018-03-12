@@ -1,10 +1,12 @@
-{    
+"use strict";
+{   
     const   SHADE = document.getElementById('shade');
-            X = document.getElementById('x');
-            BACK_MUSIC = document.getElementById('backgroundMusic');
+    const   X = document.getElementById('x');
+    const   BACK_MUSIC = document.getElementById('backgroundMusic');
+    const   BACK_MUSIC_RESTING_VOLUME = 30;
             
     var     isMuted = true;
-            openLeaderCard = '';
+    var     openLeaderCard = '';
    
     //Changes layout of title section from fixed to static after opening sequence so the rest of the interface is laid out correctly
     setTimeout(function(){
@@ -22,7 +24,7 @@
         if (BACK_MUSIC.paused) return;
         var i = 100;
         setInterval(function(){
-            if (i > backgroundRestingVolume){
+            if (i > BACK_MUSIC_RESTING_VOLUME){
                 i--;
                 musicVar.volume = i / 100;
             }
@@ -31,11 +33,10 @@
     }
 
     //Fades background music in again after a card is closed
-    var backgroundRestingVolume = 30;
     function fadeInMusic(musicVar){
         var i = 0;
         setInterval(function(){
-            if (i < backgroundRestingVolume){
+            if (i < BACK_MUSIC_RESTING_VOLUME){
                 i++;
                 musicVar.volume = i / 100;
             }
@@ -45,7 +46,7 @@
 
     //Fades background music out when a card is opened, so the card's audio doesn't overlap with the background sound
     function fadeOutMusic(musicVar){
-        var i = backgroundRestingVolume;
+        var i = BACK_MUSIC_RESTING_VOLUME;
         setInterval(function(){
             if (i > 0) {
                 i--;
@@ -56,16 +57,16 @@
     }
 
     //This will build the interface of the leader's heads
-    var   zodiacSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
-            zodiacSignsLength = zodiacSigns.length;
-            leaderNames = ['charlemagne', 'hitler', 'victoria', 'caesar', 'benito', 'caligula', 'gandhi', 'teddy', 'stalin', 'mao', 'abe', 'george'];
+    var     zodiacSigns = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
+    var     zodiacSignsLength = zodiacSigns.length;
+    var     leaderNames = ['charlemagne', 'hitler', 'victoria', 'caesar', 'benito', 'caligula', 'gandhi', 'teddy', 'stalin', 'mao', 'abe', 'george'];
 
-    function buildBlocks(){
+    (function buildBlocks(){
         var leadersContainer = document.createElement('section');
         document.querySelector('body').appendChild(leadersContainer);
         leadersContainer.id = "leadersContainer";
         
-        for (i = 0; i < zodiacSignsLength; i++){
+        for (let i = 0; i < zodiacSignsLength; i++){
             var newLeader = document.createElement('div');
             leadersContainer.appendChild(newLeader);
             newLeader.classList.add('leader');
@@ -78,12 +79,11 @@
             leaderPic.alt = `Picture of ${leaderNames[i]}`;
         }
         return;
-    }
-    buildBlocks();
+    })();
 
     //Attaching a click event to each leader so you can view each leader's card
     var leader = document.getElementsByClassName('leader');
-    for (var i = 0; i < leader.length; i++){
+    for (let i = 0; i < leader.length; i++){
         leader[i].addEventListener("click", function(){showLeaderCard(this.id)}, false);
     }
 
@@ -187,7 +187,7 @@
 
     //Adding the controls to the sound icons. This allows the user to mute/unmute all audio on the page if they want
     var volUp = document.getElementById('volUp');
-        volDown = document.getElementById('volDown');
+    var volDown = document.getElementById('volDown');
 
         volUp.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
         volDown.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
