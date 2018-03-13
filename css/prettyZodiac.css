@@ -296,6 +296,7 @@ section#cardContainer h2, h3{
 	background-position: center;
 	background-size: cover;
 	background-attachment: local;
+	box-shadow: 0px 0px 60px 4px;
 	display: none;
 	margin: 0 25vw;
 	max-height: 90vh;
@@ -330,9 +331,10 @@ section#cardContainer h2, h3{
 }
 
 .bio{
-	color: #4C4C4C;
+	color: #060606;
 	font-size: 1rem;
 	font-weight: lighter;
+	line-height: 1.5;
 	padding: 20px 10%;
 	position: relative;
 	animation: none;
