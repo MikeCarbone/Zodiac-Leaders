@@ -121,7 +121,7 @@
 
     //This will work the input section and figure out which card to show
     document.getElementById('submitButton').addEventListener("click", function(){inputFactory()});
-    var zodiacSign = ''
+    var zodiacSign = '';
     function inputFactory(){
         var month = parseInt(document.getElementById('month').value);
         var day = parseInt(document.getElementById('day').value);
@@ -189,8 +189,8 @@
     var volUp = document.getElementById('volUp');
     var volDown = document.getElementById('volDown');
 
-    volUp.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
-    volDown.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC);}, false);
+    volUp.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC)}, false);
+    volDown.addEventListener("click", function(){volumeButtonControls(BACK_MUSIC)}, false);
     
     function volumeButtonControls(sound){
         if (sound.paused) {
